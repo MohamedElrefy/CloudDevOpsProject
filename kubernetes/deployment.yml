@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: ivolve-nti
-        image: mohamedelrefy20/ivolve-graduation-image:3
+        image: mohamedelrefy20/ivolve-graduation-image:4
         ports:
         - containerPort: 5000
