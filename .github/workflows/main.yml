@@ -6,6 +6,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'kubernetes/**'
   workflow_dispatch:
 
 env:
@@ -59,7 +61,7 @@ jobs:
         with:
           author_name: 'GitHub Actions'
           author_email: 'actions@github.com'
-          message: "Update image to ${{ env.IMAGE_NAME }}:${{ github.run_number }}"
+          message: "Update image to ${{ env.IMAGE_NAME }}:${{ github.run_number }} [skip ci]"
           push: true
           branch: main
           add: ${{ env.K8S_DIR }}/${{ env.K8S_DEPLOYMENT_FILE }}
