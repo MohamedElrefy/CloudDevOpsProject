@@ -1,0 +1,54 @@
+name: Python CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  IMAGE_NAME: mohamedelrefy20/ivolve-graduation-image
+  K8S_DEPLOYMENT_FILE: deployment.yml
+  K8S_DIR: kubernetes
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+
+      - name: Build Docker image
+        run: |
+          docker build -t ${{ env.IMAGE_NAME }}:${{ github.run_number }} .
+
+      - name: Log in to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Push Docker image
+        run: |
+          docker push ${{ env.IMAGE_NAME }}:${{ github.run_number }}
+
+      - name: Remove local Docker image
+        run: |
+          docker rmi ${{ env.IMAGE_NAME }}:${{ github.run_number }}
+
+      - name: Update Kubernetes deployment YAML
+        run: |
+          cd ${{ env.K8S_DIR }}
+          sed -i "s|image:.*|image: ${{ env.IMAGE_NAME }}:${{ github.run_number }}|" ${{ env.K8S_DEPLOYMENT_FILE }}
+
+      - name: Commit and push deployment update
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: 'GitHub Actions'
+          author_email: 'actions@github.com'
+          message: "Update image to ${{ env.IMAGE_NAME }}:${{ github.run_number }}"
+          push: true
+          branch: main
+          add: ${{ env.K8S_DIR }}/${{ env.K8S_DEPLOYMENT_FILE }}
