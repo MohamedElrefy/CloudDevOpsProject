@@ -32,7 +32,7 @@
 <div align="center">
 
 ## 🚀 **ArgoCD GitOps Deployment on AWS EKS**
-### *Using GitHub Actions & DockerHub*
+
 
 </div>
 
