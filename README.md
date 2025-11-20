@@ -246,8 +246,7 @@ ArgoCD Detects Changes
 
 </div>
 
-<details open>
-<summary><h3>🏗️ Step 1: Infrastructure Provisioning with Terraform</h3></summary>
+### 🏗️ Step 1: Infrastructure Provisioning with Terraform
 
 ```bash
 # Navigate to terraform directory
@@ -274,10 +273,9 @@ terraform apply -auto-approve
 - ✅ Security groups & IAM roles
 - ✅ Load Balancer infrastructure
 
-</details>
+---
 
-<details>
-<summary><h3>⚙️ Step 2: Configure Kubectl for EKS</h3></summary>
+### ⚙️ Step 2: Configure Kubectl for EKS
 
 ```bash
 # Update kubeconfig
@@ -300,10 +298,9 @@ kubectl cluster-info
 - [ ] Cluster endpoint is reachable
 - [ ] Current context is set to EKS cluster
 
-</details>
+---
 
-<details>
-<summary><h3>🐳 Step 3: Build & Test Docker Image</h3></summary>
+### 🐳 Step 3: Build & Test Docker Image
 
 ```bash
 # Build the Docker image
@@ -327,10 +324,9 @@ curl http://localhost:8080
 - ✅ Container starts without errors
 - ✅ Application responds on expected port
 
-</details>
+---
 
-<details>
-<summary><h3>🔄 Step 4: Install & Configure ArgoCD</h3></summary>
+### 🔄 Step 4: Install & Configure ArgoCD
 
 ```bash
 # Create ArgoCD namespace
@@ -363,10 +359,9 @@ Then visit: `https://localhost:8080`
 - **Username:** `admin`
 - **Password:** Retrieved from previous command
 
-</details>
+---
 
-<details>
-<summary><h3>🔐 Step 5: Configure GitHub Secrets</h3></summary>
+### 🔐 Step 5: Configure GitHub Secrets
 
 Navigate to: **Repository → Settings → Secrets and variables → Actions**
 
@@ -382,10 +377,9 @@ Add the following secrets:
 
 > 🔒 **Security Note:** Never commit secrets to your repository!
 
-</details>
+---
 
-<details>
-<summary><h3>📦 Step 6: Create ArgoCD Application</h3></summary>
+### 📦 Step 6: Create ArgoCD Application
 
 ```bash
 # Apply ArgoCD application manifest
@@ -418,10 +412,9 @@ spec:
 
 ![Application View](images/Screenshot%20from%202025-11-17%2023-00-22.png)
 
-</details>
+---
 
-<details>
-<summary><h3>🔄 Step 7: Trigger Auto-Deployment</h3></summary>
+### 🔄 Step 7: Trigger Auto-Deployment
 
 ```bash
 # Make a change to your code
@@ -472,8 +465,6 @@ kubectl logs -f deployment/ivolve-app -n ivolve
 # Describe service
 kubectl describe svc ivolve-svc -n ivolve
 ```
-
-</details>
 
 ---
 
@@ -609,8 +600,7 @@ With auto-healing enabled
 
 ## 🎓 Learning Outcomes
 
-<details>
-<summary><b>📚 Skills Acquired</b></summary>
+### 📚 **Skills Acquired**
 
 ### ☁️ **Cloud Infrastructure**
 - ✅ AWS VPC design and implementation
@@ -647,8 +637,6 @@ With auto-healing enabled
 - ✅ Secret management
 - ✅ Network policies
 - ✅ IAM best practices
-
-</details>
 
 ---
 
@@ -747,17 +735,17 @@ For mentorship, guidance, and industry best practices
 
 ## 🌟 **Star this repo if you found it helpful!**
 
-[![GitHub Stars](https://img.shields.io/github/stars/yourusername/yourrepo?style=social)](https://github.com/yourusername/yourrepo)
-[![GitHub Forks](https://img.shields.io/github/forks/yourusername/yourrepo?style=social)](https://github.com/yourusername/yourrepo)
-[![GitHub Issues](https://img.shields.io/github/issues/yourusername/yourrepo)](https://github.com/yourusername/yourrepo/issues)
+[![GitHub Stars](https://img.shields.io/github/stars/MohamedElrefy/CloudDevOpsProject?style=social)](https://github.com/yourusername/yourrepo)
+[![GitHub Forks](https://img.shields.io/github/forks/MohamedElrefy/CloudDevOpsProject?style=social)](https://github.com/yourusername/yourrepo)
+[![GitHub Issues](https://img.shields.io/github/issues/MohamedElrefy/CloudDevOpsProject)](https://github.com/yourusername/yourrepo/issues)
 
 ---
 
 ### 📧 Contact
 
-**Email:** elrefymohamed2002@gmail.com  
-**LinkedIn:** [Your Profile]((https://www.linkedin.com/in/mohamed-elrefy-a84120259/))  
-**GitHub:** [@yourusername]((https://github.com/MohamedElrefy))
+**Email:** your.email@example.com  
+**LinkedIn:** [Your Profile](https://www.linkedin.com/in/mohamed-elrefy-a84120259/)  
+**GitHub:** [@yourusername](https://github.com/MohamedElrefy)
 
 ---
 
