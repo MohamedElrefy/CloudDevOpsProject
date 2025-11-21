@@ -80,7 +80,7 @@
 
 <div align="center">
 
-![Architecture Diagram](images/Ivolve-Project-Architecture.png)
+![Architecture Diagram](images/Project-Architecture.png)
 
 </div>
 
