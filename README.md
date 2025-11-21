@@ -80,7 +80,7 @@
 
 <div align="center">
 
-![Architecture Diagram](images/photo_5832244947644517131_y.jpg)
+![Architecture Diagram](images/Ivolve-Project-Architecture.png)
 
 </div>
 
